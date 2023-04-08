@@ -10,9 +10,13 @@ namespace UserRegistrationProgram
             string FName = Console.ReadLine();
             Console.WriteLine("Enter the Last Name:");
             string LName = Console.ReadLine();
+            Console.WriteLine("Enter your Email Id:");
+            string MailId = Console.ReadLine();
 
             Console.WriteLine(obj.ValidateFName(FName));
             Console.WriteLine(obj.ValidateFName(LName));
+            Console.WriteLine(obj.ValidateEmail(MailId));
+
         }
     }
 }
