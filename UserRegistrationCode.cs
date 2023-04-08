@@ -14,6 +14,7 @@ namespace UserRegistrationProgram
         public static string LastName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string Email = "^[a-z0-9._+-]+@[a-z0-9.-]+\\.[a-z.]{2,}$";
         public static string MobileNum = "^[0-9]{2} [0-9]{10}$";
+        public static string Password = "^.{8,}$";
 
         //CHECK 1ST NAME
         public bool ValidateFName(string FName)
@@ -38,6 +39,12 @@ namespace UserRegistrationProgram
         public bool ValidateMobNum(string MobNum)
         {
             return Regex.IsMatch(MobNum, MobileNum);
+        }
+
+        //CHECK PASSWORD
+        public bool ValidatePassword(string password)
+        {
+            return Regex.IsMatch(password, Password);
         }
     }
 }
