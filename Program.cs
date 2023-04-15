@@ -1,10 +1,15 @@
-﻿namespace UserRegistrationProblem
+using UserRegistrartionWithAnotation;
+
+namespace UserRegistrationWithAnotation
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args) 
         {
-            Console.WriteLine("Welcome to User Registration Problem");
+            Console.WriteLine("Welcome to User Regestration problem!!");
+            Console.WriteLine("*********************************");
+
+            Annotest.Display();
         }
     }
 }
