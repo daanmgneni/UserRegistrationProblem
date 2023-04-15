@@ -21,7 +21,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid first name. Please enter a first name starting with a capital letter and at least 3 characters.";
+                throw new InvalidFirstNameException("Invalid first name. Please enter a first name starting with a capital letter and at least 3 characters.");
             }
         }
 
@@ -37,7 +37,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid last name. Please enter a last name starting with a capital letter and at least 3 characters.";
+                throw new InvalidLastNameException("Invalid last name. Please enter a last name starting with a capital letter and at least 3 characters.");
             }
         }
 
@@ -59,7 +59,7 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid email. Please enter a valid email address.";
+                throw new InvalidEmailException("Invalid email. Please enter a valid email address.");
             }
         }
 
@@ -80,7 +80,8 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid Phone Number. Please enter a valid Phone Number.";
+                throw new InvalidPhoneException("Invalid Phone Number. Please enter a valid Phone Number.");
+
             }
         }
 
@@ -101,12 +102,12 @@ namespace UserRegistrationdaylambda_24
             }
             else
             {
-                return "Invalid Password. Please enter a valid Password.";
+                throw new InvalidPasswordException("Invalid Password. Please enter a valid Password.");
             }
         }
 
         // validate each email sample using lambda expression
-        public void ValidateAllEmailSample()
+        public string ValidateAllEmailSample(string email2)
         {
             string[] emailSamples = new string[] { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
 
@@ -119,19 +120,21 @@ namespace UserRegistrationdaylambda_24
 
 
             Array.ForEach(emailSamples, email => {
-                Console.Write("Please enter your email address: ");
-                string email2 = Console.ReadLine();
+                //Console.Write("Please enter your email address: ");
+                //string email2 = Console.ReadLine();
+            });
 
 
-                if (Email(email2) == true)
+            if (Email(email2) == true)
                 {
-                    Console.WriteLine(email2 + " passed validation.");
+                    return "your email passed validation";
                 }
                 else
                 {
-                    Console.WriteLine(email2 + " failed validation.");
+                    return " failed validation.";
                 }
-            });
+           
 
         }
- }
+    }
+}
